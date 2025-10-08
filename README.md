@@ -1,16 +1,35 @@
-# chatapp_llm
+# 💬 ChatApp LLM
 
-A new Flutter project.
+A modern **Flutter-based AI Chat Application** powered by local or remote LLMs (Large Language Models) using LM Studio.  
+It features a clean UI, real-time markdown responses (headings, bullet points, code blocks, emojis), and persistent chat sessions using **Hive**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🧠 AI-powered chat responses (Markdown formatted)  
+- 💾 Persistent chat sessions (Hive storage)  
+- ✨ Modern dark & pink UI design  
+- 📜 Selectable and copyable AI responses  
+- 🔄 Auto-scroll during new messages  
+- 🗂️ Multi-session tab support  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🖼️ App Preview
+
+> Add your screenshot below (recommended size: 1080×1920)
+
+<p align="center">
+  <img src="assets/images/app.png" alt="App Screenshot" width="300"/>
+</p>
+---
+
+## 🛠️ Getting Started
+
+To get started with this project:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/chatapp_llm.git
+   cd chatapp_llm
