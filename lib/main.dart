@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/splash_screen.dart';
+import 'screens/rive_animation_screen.dart'; // 👈 import your Rive screen here
+import 'screens/chat_list_screen.dart'; // 👈 your main chat/home screen
 import 'services/storage_service.dart';
 
-// Entry point of the app
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await StorageService.registerAdaptersAndOpenBoxes();
@@ -17,9 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pinkPrimary = Colors.pinkAccent.shade200;
+
     return MaterialApp(
       title: 'LLM Chat',
       debugShowCheckedModeBanner: false,
+
+      // 🌈 Define your theme
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -59,6 +63,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+
       darkTheme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
@@ -68,8 +73,17 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
       ),
+
       themeMode: ThemeMode.system,
+
+      // 🏁 Entry point
       home: const SplashScreen(),
+
+      // 🌍 Routes section — add all screens here
+      routes: {
+        '/rive': (context) => const RiveAnimationScreen(),
+        '/home': (context) => const ChatListScreen(),
+      },
     );
   }
 }

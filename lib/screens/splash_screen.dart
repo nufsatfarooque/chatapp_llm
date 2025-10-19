@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:llm_chat_local/screens/rive_animation_screen.dart';
 import 'chat_list_screen.dart';
 
 /// Modern and elegant splash screen with animated logo and stylish layout.
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     Timer(const Duration(milliseconds: 2500), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const ChatListScreen()),
+        MaterialPageRoute(builder: (_) => const RiveAnimationScreen()),
       );
     });
   }

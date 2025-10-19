@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/chat_message.dart';
 import 'typing_markdown.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ChatBubble extends StatelessWidget {
   final ChatMessage message;
@@ -25,7 +26,8 @@ class ChatBubble extends StatelessWidget {
       }
     });
 
-    return Align(
+    // Main chat bubble
+    final bubble = Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 6),
@@ -49,5 +51,15 @@ class ChatBubble extends StatelessWidget {
               ),
       ),
     );
+
+    // Animate entry: user slides right, LLM slides left
+    return bubble
+        .animate()
+        .fadeIn(duration: 400.ms, curve: Curves.easeOut)
+        .slide(
+          begin: Offset(isUser ? 0.3 : -0.3, 0),
+          duration: 500.ms,
+          curve: Curves.easeOutCubic,
+        );
   }
 }
